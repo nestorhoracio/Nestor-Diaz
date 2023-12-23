@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Blanka";
+    src: url(../fonts/Blanka-Regular.otf) format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Bauhaus Bold BT";
+    src: url(../fonts/bauhaus_bold_bt.ttf) format("truetype");
+    font-style: normal;
+    font-weight: normal;
+}

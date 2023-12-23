@@ -1,0 +1,34 @@
+#footer {
+    display: inline-block;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--sixth-color);
+    /* background-image: url("../img/portada-Website.webp"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#footer img {
+    padding: 0;
+    width: 57px;
+    height: 57px;
+    border-radius: 50%;
+}
+
+#footer p {
+    color: var(--title-primary);
+}
+
+#footer .contenedor .cubo .cara img {
+    width: 57px;
+    height: 57px;
+    background-color: black;
+}
+
+#footer .contenedor .cubo .cara button:hover {
+    cursor: pointer;
+    background-color: black;
+    opacity: all 0.7;
+}

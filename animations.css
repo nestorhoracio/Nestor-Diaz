@@ -1,0 +1,309 @@
+/* animacion en barra de menu */
+.loading-screen {
+    width: 80px;
+    height: 70px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: baseline;
+}
+
+.loading {
+    width: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading span {
+    width: 32px;
+    height: 32px;
+    margin: 3px;
+    animation: scale 1.5s linear infinite;
+}
+
+@keyframes scale {
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.loading span:nth-child(1) {
+    border-radius: 50% 50% 0 50%;
+    background-color: var(--title-secondary);
+    transform-origin: bottom right;
+}
+
+.loading span:nth-child(2) {
+    border-radius: 50% 50% 50% 0;
+    background-color: var(--primary-color);
+    transform-origin: bottom left;
+    animation-delay: .5s;
+}
+
+.loading span:nth-child(3) {
+    border-radius: 50% 0 50% 50%;
+    background-color: var(--seventh-color);
+    transform-origin: top right;
+    animation-delay: 1.5s;
+}
+
+.loading span:nth-child(4) {
+    border-radius: 0 50% 50% 50%;
+    background-color: var(--nineth-color);
+    transform-origin: top left;
+    animation-delay: 1s;
+}
+
+/* animacion header */
+.rotating-text-wrapper {
+    margin-top: -5em;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.rotating-text-wrapper h1 {
+    font-size: 2.5em;
+    margin: 0;
+    padding: 0;
+    color: var(--title-primary);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.8);
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    opacity: 0;
+}
+
+.rotating-text-wrapper h2 {
+    font-size: 2em;
+    margin: 0;
+    padding: 0;
+    color: var(--primary-color);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.8);
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    opacity: 0;
+}
+
+.rotating-text-wrapper h1 {
+    background-color: black;
+    animation-name: rotating-text-1;
+}
+
+@keyframes rotating-text-1 {
+    0% {
+        transform: translateY(200%);
+    }
+
+    33% {
+        transform: translateY(100%);
+        opacity: 1;
+    }
+
+    34% {
+        opacity: 0;
+    }
+}
+
+.rotating-text-wrapper h2 {
+    background-color: black;
+    animation-name: rotating-text-2;
+}
+
+@keyframes rotating-text-2 {
+    33% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    66% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    67% {
+        opacity: 0;
+    }
+}
+
+/* para texto en 3d */
+.texto3d {
+    text-shadow: -1px 1px 0px black,
+        -2px 2px 0px black,
+        -3px 3px 0px black,
+        -4px 4px 0px black,
+        -5px 5px 0px black;
+}
+
+/* giro en x */
+.giroX {
+
+    animation: 6s giroX infinite;
+    backface-visibility: visible;
+    /* Porpiedad que determina si la partte de atras del elemento será o no visible al girarse pro completo */
+}
+
+@keyframes giroX {
+
+    0% {
+        opacity: 0.5;
+        transform: perspective(200px) rotateX(90deg);
+    }
+
+    40% {
+        opacity: 0.5;
+        transform: perspective(200px) rotateX(-20deg);
+    }
+
+    70% {
+        opacity: 0.5;
+        transform: perspective(200px) rotateX(10deg);
+    }
+
+}
+
+/* sombras a cajas y elementos */
+/* Estilos de la sombra (ocultada) */
+.sombra_movil:before {
+    content: "";
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    top: 100%;
+    height: 10px;
+
+    background-image: radial-gradient(ellipse, rgba(0, 0, 0, 0.35) 35%, rgb(255, 255, 255) 80%);
+    transition: all 0.3s;
+    opacity: 0;
+}
+
+.sombra_movil:hover {
+    /* Mueve la caja hacia arriba */
+
+    transform: translateY(-5px);
+    animation: movercaja 2.5s infinite;
+}
+
+
+@keyframes movercaja {
+
+    50% {
+        transform: translateY(6px);
+    }
+
+
+}
+
+
+.sombra_movil:hover:before {
+    /* Mueve la sombra hacia abajo y hace aprecer la sombra (previamente camuflada por transparencia) */
+    top: 105%;
+    opacity: 0.4;
+    animation: moversombra 2.5s infinite;
+}
+
+@keyframes moversombra {
+
+    50% {
+
+        transform: translateY(-5px);
+        opacity: 1;
+    }
+
+}
+
+/* animacion 3d footer redes sociales */
+.contenedor {
+    perspective: 350px;
+    perspective-origin: 50% 50%;
+}
+
+
+.cubo {
+    transform-style: preserve-3d;
+    transform: rotateY(-30deg);
+    margin: 100px auto;
+}
+
+.cubo,
+.cubo>div {
+
+    height: 79px;
+    width: 79px;
+}
+
+.cara {
+
+    position: absolute;
+    border: 5px solid white;
+    opacity: 0.8;
+}
+
+.cubo .cara:nth-child(1) {
+    background-color: black;
+    transform: translateZ(100px);
+}
+
+
+.cubo .cara:nth-child(2) {
+    background-color: black;
+    transform: translateZ(-100px);
+
+}
+
+.cubo .cara:nth-child(3) {
+    background-color: black;
+    transform: translateX(-100px) rotateY(-90deg);
+
+}
+
+.cubo .cara:nth-child(4) {
+    background-color: black;
+    transform: translateX(100px) rotateY(-90deg);
+
+}
+
+.cubo .cara:nth-child(5) {
+    background-color: black;
+    transform: translateY(-100px) rotateX(-90deg);
+
+}
+
+.cubo .cara:nth-child(6) {
+    background-color: black;
+    transform: translateY(100px) rotateX(-90deg);
+
+}
+
+.cubo {
+
+    animation: giro 50s infinite linear;
+}
+
+@keyframes giro {
+
+    0% {
+        transform: rotateX(-45deg) rotateY(0deg);
+    }
+
+
+    50% {
+        transform: rotateX(45deg) rotateY(360deg);
+    }
+
+
+    100% {
+        transform: rotateX(-45deg) rotateY(720deg);
+    }
+
+
+}

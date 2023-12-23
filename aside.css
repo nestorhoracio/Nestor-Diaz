@@ -1,0 +1,91 @@
+#aside {
+    text-align: center;
+    align-items: center;
+    background-color: var(--nineth-color);
+}
+
+#aside h3 {
+    padding: 15px;
+    font-weight: bold;
+}
+
+.logo-inst {
+    border-style: double;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 15px;
+}
+
+.logo-inst img {
+    max-width: 150px;
+    margin: 10px;
+    padding: 20px;
+}
+
+#aside img {
+    margin: 15px;
+}
+
+#aside>p {
+    color: var(--seventh-color);
+}
+
+.logo-inst img:hover {
+    opacity: 0.7;
+    background-color: var(--seventh-color);
+}
+
+.logo-inst p {
+    color: var(--fourd-color);
+}
+
+/* links de interes */
+.links-interes {
+    display: flex;
+    margin: 2em;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.links-interes button {
+    margin: 2em;
+    padding: -2px;
+    background-color: var(--tenth-color);
+    border-radius: 5%;
+    border: none;
+    box-sizing: border-box;
+}
+
+.links-interes img {
+    max-width: 300px;
+    max-height: 200px;
+}
+
+.links-interes img:hover {
+    opacity: 0.7;
+    background-color: var(--seventh-color);
+    border-radius: 5%;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 768px) {
+    .logo-inst {
+        max-width: 150;
+        border-style: double;
+        border-radius: 10px;
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .logo-inst img {
+        max-width: 100px;
+        margin: 10px;
+        padding: 20px;
+    }
+
+    .links-interes img {
+        max-width: 150px;
+        max-height: 100px;
+    }
+}
